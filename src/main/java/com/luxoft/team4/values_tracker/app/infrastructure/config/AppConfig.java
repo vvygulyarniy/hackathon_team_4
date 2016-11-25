@@ -15,7 +15,9 @@ import org.springframework.context.annotation.Import;
 		SecurityAutoConfiguration.class,
 		JpaRepositoriesAutoConfiguration.class
 })
-@ComponentScan(basePackages = "com.luxoft.team4.values_tracker.app.infrastructure.rest.controller")
+@ComponentScan(basePackages = {"com.luxoft.team4.values_tracker.app.infrastructure.rest.controller",
+		"com.luxoft.team4.values_tracker.app.infrastructure.controller."
+})
 @Import(PersistenceConfig.class)
 public class AppConfig {
 
