@@ -1,0 +1,64 @@
+body{
+	margin:0;
+	padding:0;
+}
+
+/* Main header */
+#main-header {
+	background: #c0c0c0;
+	height: 58px;
+	padding: 10px 10px 10px 20px;
+}
+
+/* Main menu */
+#menu {
+	float:right;
+}
+
+#menu li{
+	list-style-type: none;
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+    float: left;
+}
+
+#menu li a {
+    display: block;
+    color: #004080;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight:bold;
+}
+
+#menu li a:hover:not(.active) {
+  	color: white;
+}
+
+/* Value buttons */
+div#values{
+	margin:50px auto;
+	width:700px;
+	padding:10px;
+}
+#values ul li {
+    display:inline;
+    list-style-type: none;
+	margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#values li a {
+	background-color:#c0c0c0;
+    color: #004080;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight:bold;
+}
+
+
+
+
