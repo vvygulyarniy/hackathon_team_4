@@ -20,6 +20,6 @@ public class EmployeeRepoIT extends AbstractTestNGSpringContextTests {
 	@Test
 	public void shouldGivePointsForUserById() throws Exception {
 		EmployeePoints employeePoints = employeeRepo.getEmployeePoints(1L);
-		assertThat(employeePoints.getTotalPoints()).isEqualTo(10L);
+		assertThat(employeePoints.getTotalPoints()).isEqualTo(42L);
 	}
 }
