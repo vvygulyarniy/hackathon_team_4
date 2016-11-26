@@ -41,4 +41,9 @@ public final class ValuesResourceController {
 	public List<EmployeePoints> getTopParticipants(@PathVariable CompanyValue value) {
 		return employeeRepo.getTopEmployeesByCompanyValue(value, new PageRequest(0, 10));
 	}
+
+	@RequestMapping(value = "/{value}/top/organizers", method = GET)
+	public List<EmployeePoints> getTopOrganizers(@PathVariable CompanyValue value) {
+		return employeeRepo.getTopOrganizersByCompanyValue(value, new PageRequest(0, 10));
+	}
 }
