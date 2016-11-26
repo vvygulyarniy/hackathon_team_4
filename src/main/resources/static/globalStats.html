@@ -1,5 +1,5 @@
 <script>
-	function setBarWidth(dataElement, barElement, cssProperty, barPercent) {
+function setBarWidth(dataElement, barElement, cssProperty, barPercent) {
 	  var listData = [];
 	  $(dataElement).each(function() {
 	    listData.push($(this).html());
@@ -9,32 +9,36 @@
 	    $(this).css(cssProperty, (listData[index] / listMax) * barPercent + "%");
 	  });
 	}
-	setBarWidth(".bars span", ".bars em", "padding-right", 50);
+setBarWidth(".bars span", ".bars em", "padding-right", 50);
 </script>
 <div id="graphs">
-  <section>
-    <ul class="bars">
-      <li>
-        <em>Creativity</em>
-        <span>127</span>
-      </li>
-      <li>
-        <em>Relationships</em>
-        <span>98</span>
-      </li>
-      <li>
-        <em>Agility</em>
-        <span>34</span>
-      </li>
-      <li>
-        <em>Fun</em>
-        <span>148</span>
-      </li>
-      <li>
-        <em>Commitment</em>
-        <span>10</span>
-      </li>
-    </ul>
-  </section>
-  <p>Total number of participants:199</p>
-</div>
+		  <section>
+		    <ul class="bars">
+		     <!-- <li ng-repeat="x in total.values" ng-init="$last && doSomething()">
+		      	<em>{{x.value}}</em>
+		      	<span>{{x.points}}</span>
+		      </li> -->
+		      <li>
+		        <em>Creativity</em>
+		        <span>127</span>
+		      </li>
+		      <li>
+		        <em>Relationships</em>
+		        <span>98</span>
+		      </li>
+		      <li>
+		        <em>Agility</em>
+		        <span>34</span>
+		      </li>
+		      <li>
+		        <em>Fun</em>
+		        <span>148</span>
+		      </li>
+		      <li>
+		        <em>Commitment</em>
+		        <span>10</span>
+		      </li>
+		    </ul>
+		  </section>
+		  <p>Total number of participants:199</p>
+		</div>
