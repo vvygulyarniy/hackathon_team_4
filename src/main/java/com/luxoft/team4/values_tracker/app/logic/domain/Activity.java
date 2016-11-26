@@ -10,8 +10,8 @@ import static javax.persistence.EnumType.STRING;
 /**
  * Created by vadim.vygulyarniy
  */
-/*@Entity
-@Table(name = "activity")*/
+@Entity
+@Table(name = "company_activity")
 @Data
 public class Activity {
 	@Id
@@ -31,7 +31,8 @@ public class Activity {
 	@Column(name = "finish_date")
 	private LocalDateTime finishDate;
 	@Column(name = "available_for_group")
-	private String availableForGroup;
-
+	private Long availableForGroup;
+	@ManyToOne
+	@JoinColumn(name = "organizer_id")
 	private Employee organizer;
 }

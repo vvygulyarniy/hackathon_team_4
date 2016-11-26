@@ -1,11 +1,17 @@
 package com.luxoft.team4.values_tracker.app.infrastructure.rest.controller;
 
 import com.luxoft.team4.values_tracker.app.infrastructure.persistence.CompanyValueRepo;
-import com.luxoft.team4.values_tracker.app.infrastructure.rest.domain.values.ValueTopResponse;
+import com.luxoft.team4.values_tracker.app.infrastructure.persistence.EmployeeRepo;
 import com.luxoft.team4.values_tracker.app.infrastructure.rest.domain.values.ValuesSummary;
+import com.luxoft.team4.values_tracker.app.logic.domain.CompanyValue;
+import com.luxoft.team4.values_tracker.app.logic.domain.EmployeePoints;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -15,22 +21,29 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 @RestController
 @RequestMapping("/values")
 public final class ValuesResourceController {
-	private final CompanyValueRepo repo;
+	private final CompanyValueRepo companyValueRepo;
+	private final EmployeeRepo employeeRepo;
 
 	@Autowired
-	public ValuesResourceController(final CompanyValueRepo repo) {
-		this.repo = repo;
+	public ValuesResourceController(final CompanyValueRepo companyValueRepo, EmployeeRepo employeeRepo) {
+		this.companyValueRepo = companyValueRepo;
+		this.employeeRepo = employeeRepo;
 	}
 
 	@RequestMapping(method = GET)
 	public ValuesSummary getSummary() {
 		return ValuesSummary.builder()
-				.values(repo.findAll())
-				.build();
+							.values(companyValueRepo.findAll())
+							.build();
 	}
 
 	@RequestMapping(value = "/{value}/top/participants", method = GET)
-	public ValueTopResponse getTopParticipants() {
-		return null;
+	public List<EmployeePoints> getTopParticipants(@PathVariable CompanyValue value) {
+		return employeeRepo.getTopEmployeesByCompanyValue(value, new PageRequest(0, 10));
+	}
+
+	@RequestMapping(value = "/{value}/top/organizers", method = GET)
+	public List<EmployeePoints> getTopOrganizers(@PathVariable CompanyValue value) {
+		return employeeRepo.getTopOrganizersByCompanyValue(value, new PageRequest(0, 10));
 	}
 }
