@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  	<!-- <base href="/"> -->
+    <!--title-->
+    <title>Luxoft | activity tracker</title>
+
+    <!--CSS-->
+    <link href="./css/style.css" rel="stylesheet"/>
+     <link href="./css/bars.css" rel="stylesheet"/>
+ 
+    <!-- JS -->
+    <script src="js/jquery-2.1.4.min.js" type="text/javascript"></script>
+    <script src="js/angular.min.js" type="text/javascript"></script>
+    <script src="js/angular-route.js" type="text/javascript"></script>
+ 
+</head>
+<body ng-app="myApp" >
+
+	<div ng-include="'header.html'"></div>
+	<div id="content">
+		<div id="values">
+			<ul>
+				 <li><a href="/excelence">Excellence</a></li>
+		         <li><a href="/creativity">Creativity</a></li>
+		         <li><a href="/relationships">Relationships</a></li>
+		         <li><a href="/agility">Agility</a></li>
+		         <li><a href="/fun">Fun</a></li>
+		         <li><a href="/commitment">Commitment</a></li>
+			</ul>
+		</div>
+		
+		<div ng-view></div>
+	
+	</div>
+<script src="js/main.js" type="text/javascript"></script>
+</body>
+</html>
