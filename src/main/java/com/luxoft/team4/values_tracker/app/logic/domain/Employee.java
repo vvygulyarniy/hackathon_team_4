@@ -1,9 +1,12 @@
 package com.luxoft.team4.values_tracker.app.logic.domain;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -11,7 +14,8 @@ import java.time.LocalDate;
  */
 @Entity
 @Table(name = "employee")
-public final class Employee {
+@Data
+public class Employee implements Serializable {
 	@Id
 	@Column(name = "id")
 	private Long id;

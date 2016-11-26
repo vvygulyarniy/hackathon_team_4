@@ -1,6 +1,7 @@
 package com.luxoft.team4.values_tracker.app.infrastructure.rest.controller;
 
 import com.luxoft.team4.values_tracker.app.infrastructure.persistence.CompanyValueRepo;
+import com.luxoft.team4.values_tracker.app.infrastructure.persistence.EmployeeRepo;
 import com.luxoft.team4.values_tracker.app.infrastructure.rest.domain.values.ValuesSummary;
 import com.luxoft.team4.values_tracker.app.logic.domain.ValuePoints;
 import org.mockito.Mock;
@@ -20,13 +21,15 @@ import static org.mockito.Mockito.when;
 public class ValuesResourceControllerTest {
 	@Mock
 	private CompanyValueRepo repo;
+	@Mock
+	private EmployeeRepo employeeRepo;
 
 	private ValuesResourceController ctrl;
 
 	@BeforeTest
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
-		ctrl = new ValuesResourceController(repo);
+		ctrl = new ValuesResourceController(repo, employeeRepo);
 	}
 
 	@Test

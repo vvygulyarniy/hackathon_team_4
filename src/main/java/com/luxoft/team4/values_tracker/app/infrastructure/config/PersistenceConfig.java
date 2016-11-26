@@ -33,12 +33,15 @@ public class PersistenceConfig {
 				.setName("INMEMORY_DB")
 				.setType(H2)
 				.addScripts("db/tables/value_statistics.sql",
-						"db/tables/employee.sql",
-						"db/tables/activity_employee.sql",
-						"db/tables/employee_points.sql",
-						"db/data/value_statistics.sql",
-						"db/data/employee.sql",
-						"db/data/activity_employee.sql")
+							"db/tables/employee.sql",
+							"db/tables/activity.sql",
+							"db/tables/activity_employee.sql",
+							"db/tables/employee_points.sql",
+							"db/tables/organizer_points.sql",
+							"db/data/value_statistics.sql",
+							"db/data/employee.sql",
+							"db/data/activity_employee.sql",
+							"db/data/activity.sql")
 				.build();
 	}
 

@@ -12,7 +12,7 @@ import static javax.persistence.EnumType.STRING;
  * Created by vadim.vygulyarniy
  */
 @Entity
-@Table(name = "value_points")
+@Table(name = "value_statistics")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
